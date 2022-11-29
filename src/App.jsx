@@ -46,13 +46,10 @@ function App() {
           handleChange={handleChange} 
           />
         </div>
-        <div className='results-div'>
-          <Results 
-          tipAmountPerPerson={tipAmountPerPerson}
-          totalAmountPerPerson={totalAmountPerPerson}
-          />
-        </div>
-           
+        <Results 
+        tipAmountPerPerson={tipAmountPerPerson}
+        totalAmountPerPerson={totalAmountPerPerson}
+        />
       </div>
     </main>
   )

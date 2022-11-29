@@ -3,9 +3,10 @@ export default function SelectTip(props) {
 
     return (
         <div className='select-tip'>
-          <h2>Select Tip</h2>
+          <h2>Select Tip %</h2>
           <form>
             <input
+            className="tip-type"
             type="radio"
             id="5%"
             name="tip"
@@ -15,6 +16,7 @@ export default function SelectTip(props) {
             />
             <label htmlFor="5%">5%</label>
             <input
+            className="tip-type"
             type="radio"
             id="10%"
             name="tip"
@@ -24,6 +26,7 @@ export default function SelectTip(props) {
             />
             <label htmlFor="10%">10%</label>
             <input
+            className="tip-type"
             type="radio"
             id="15%"
             name="tip"
@@ -33,6 +36,7 @@ export default function SelectTip(props) {
             />
             <label htmlFor="15%">15%</label>
             <input
+            className="tip-type"
             type="radio"
             id="20%"
             name="tip"
@@ -42,6 +46,7 @@ export default function SelectTip(props) {
             />
             <label htmlFor="20%">20%</label>
             <input
+            className="tip-type"
             type="radio"
             id="25%"
             name="tip"
@@ -51,6 +56,7 @@ export default function SelectTip(props) {
             />
             <label htmlFor="25%">25%</label>
             <input
+            className="tip-type"
             type="radio"
             id="50%"
             name="tip"
@@ -60,6 +66,7 @@ export default function SelectTip(props) {
             />
             <label htmlFor="50%">50%</label>
             <input
+            className="custom-tip"
             type="text"
             placeholder="Custom"
             onChange={props.handleChange}
