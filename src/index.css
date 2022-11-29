@@ -4,10 +4,21 @@
 
 body {
   margin: 0;
+  background-color: #c2e3e3;
 }
 
 img, picture, iframe {
   display: block;
   width: 100%;
   margin: auto;
+}
+
+main {
+  background-color: white;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.container {
+  flex-basis: 90%;
 }

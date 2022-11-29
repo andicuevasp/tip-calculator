@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState , useEffect} from 'react'
 import Bill from "../src/components/Bill"
 import SelectTip from "../src/components/SelectTip"
 import NumberOfPeople from "../src/components/NumberOfPeople"
@@ -9,12 +9,13 @@ function App() {
     {
       billAmount: 0,
       tip: 0,
-      numberOfPeople: 0
+      numberOfPeople: 1
     }
   )
 
-  const [tipAmountPerPerson, setTipAmountPerPerson] = useState(0);
-  const [totalAmountPerPerson, setTotalAmountPerPerson] = useState(0);
+  const tipAmountPerPerson = (formData.tip * formData.billAmount) / 100 / formData.numberOfPeople || 0;
+  const totalAmountPerPerson = (formData.billAmount / formData.numberOfPeople) + tipAmountPerPerson || 0;
+
   
   console.log(formData)
   function handleChange(e) {
@@ -27,35 +28,31 @@ function App() {
     })
   }
 
-  function getTipAmountPerPerson(tip) {
-    setTipAmountPerPerson(
-      ((tip*formData.billAmount) / 100) / formData.numberOfPeople
-    )
-
-    return tipAmountPerPerson
-  }
-
   return (
     <main>
       <div className='container'>
         <h1>Bill Splitter | Tip Calculator</h1>
-        <Bill 
-        formData={formData}
-        handleChange={handleChange}
-        />
-        <SelectTip
-        formData={formData}
-        handleChange={handleChange} 
-        />
-        <NumberOfPeople
-        formData={formData}
-        handleChange={handleChange} 
-        />
-        <Results 
-        tipAmountPerPerson={tipAmountPerPerson}
-        totalAmountPerPerson={totalAmountPerPerson}
-        getTipAmountPerPerson={()=> getTipAmountPerPerson(formData.tip)}
-        />   
+        <div className='initial-values'>
+          <Bill 
+          formData={formData}
+          handleChange={handleChange}
+          />
+          <SelectTip
+          formData={formData}
+          handleChange={handleChange} 
+          />
+          <NumberOfPeople
+          formData={formData}
+          handleChange={handleChange} 
+          />
+        </div>
+        <div className='results-div'>
+          <Results 
+          tipAmountPerPerson={tipAmountPerPerson}
+          totalAmountPerPerson={totalAmountPerPerson}
+          />
+        </div>
+           
       </div>
     </main>
   )
