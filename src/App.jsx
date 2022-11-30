@@ -8,7 +8,7 @@ function App() {
   const [formData, setFormData] = useState(
     {
       billAmount: 0,
-      tip: 0,
+      tip: "Custom",
       numberOfPeople: 1
     }
   )
@@ -28,10 +28,19 @@ function App() {
     })
   }
 
+  function reset() {
+    setFormData({
+      billAmount: 0,
+      tip: "Custom",
+      numberOfPeople: 1
+    })
+
+  }
+
   return (
     <main>
+      <h1>Bill Splitter | Tip Calculator</h1>
       <div className='container'>
-        <h1>Bill Splitter | Tip Calculator</h1>
         <div className='initial-values'>
           <Bill 
           formData={formData}
@@ -49,6 +58,7 @@ function App() {
         <Results 
         tipAmountPerPerson={tipAmountPerPerson}
         totalAmountPerPerson={totalAmountPerPerson}
+        reset={reset}
         />
       </div>
     </main>

@@ -5,6 +5,8 @@
 body {
   margin: 0 auto;
   background-color: #c2e3e3;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
 }
 
 img, picture, iframe {
@@ -13,26 +15,20 @@ img, picture, iframe {
   margin: auto;
 }
 
-main {
-  background-color: white;
-  font-family: 'Space Mono', monospace;
-  margin: 3rem;
-}
 
 .container {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  border-radius: 20px 20px 0 0;
+  background-color: white;
 }
 
 .initial-values, .results {
   display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 1rem;
-  flex-flow: column wrap;
+  flex-direction: column;
 }
 
 
@@ -40,46 +36,74 @@ main {
   background-color: #05454c;
 }
 
+.bill {
+  display: flex;
+  flex-direction: column;
+}
 
-.bill-input, .custom-tip{
+.bill-input, .custom-tip, .number-people-input{
   border-color: #3db6a7;
   border-radius: 3px;
   border-style: solid;
   background-color: #f3fafa;
-  text-align: right;
 }
-.bill-input {
-  background-image: url("../src/assets/icon-dollar.svg");
+.bill-input, .number-people-input {
   background-repeat: no-repeat;
   background-size: initial;
   background-position: 5% center;
   padding: 10px;
+  width: 100%;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: right;
 }
 
-.select-tip {
+.bill-input {
+  background-image: url("../src/assets/icon-dollar.svg");
+}
+
+.select-tip-form {
   display: flex;
   flex-flow: row wrap;
-}
-
-form {
-  display: flex;
-  flex-direction: row wrap;
   align-items: center;
   justify-content: center;
 }
-.tip-type {
+
+.select-tip-radio {
   visibility: hidden;
+  position: absolute;
 }
 
 div.select-tip > form > label {
   background-color: #05454c;
+  width: 120px;
+  height: 40px;
+  padding: 2px;
+  text-align: center;
   color: white;
-  padding: 20px 50px;
   border-radius: 3px;
-  font-size: 2em;
+  font-size: 1.5rem;
+  margin: 1rem;
 }
 
 .custom-tip {
-  padding: 29px 10px;
-  margin: 20px;
+  height: 40px;
+  width: 120px;
+  margin: 1rem;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.number-people-input {
+  background-image: url("../src/assets/icon-person.svg");
+}
+
+.results {
+    background-color: #05454c;
+    width: 90%;
+    border-radius: 20px;
+    padding: 10px;
 }
