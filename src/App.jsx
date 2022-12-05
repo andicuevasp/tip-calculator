@@ -13,19 +13,10 @@ function App() {
       numberOfPeople: 0
     }
   )
-  const [tipAmountPerPerson, setTipAmountPerPerson] = useState(0.00);
-  const [totalAmountPerPerson, setTotalAmountPerPerson] = useState(0.00)
-
-  useEffect(() => {
-    const {billAmount, tip, numberOfPeople} = formData
-    setTipAmountPerPerson((((tip * billAmount)/100)/numberOfPeople).toFixed(2))
-  }, [formData])
-
-   useEffect(()=> {
-    const {billAmount, numberOfPeople} = formData
-    setTotalAmountPerPerson(((billAmount/numberOfPeople) + tipAmountPerPerson).toFixed(2))
-   },[formData])
-  
+ 
+  const tipAmountPerPerson = parseFloat((((formData.tip * formData.billAmount)/100)/formData.numberOfPeople).toFixed(2))
+  const totalAmountPerPerson = parseFloat(((formData.billAmount/formData.numberOfPeople) + tipAmountPerPerson).toFixed(2)) 
+ 
   
   console.log(formData)
   function handleChange(e) {
