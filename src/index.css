@@ -116,6 +116,7 @@ h3 {
   margin-bottom: 1rem;
 }
 
+
 .select-tip-form {
   display: flex;
   flex-flow: row wrap;
@@ -127,8 +128,11 @@ h3 {
   visibility: hidden;
   position: absolute;
 }
+.select-tip-div {
+  display: flex;
+}
 
-div.select-tip > form > label {
+div.select-tip > form > .select-tip-div > label {
   background-color: #05454c;
   width: 120px;
   height: 40px;

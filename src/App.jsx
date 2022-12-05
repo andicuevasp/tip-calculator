@@ -22,9 +22,8 @@ function App() {
   }, [formData])
 
    useEffect(()=> {
-    let tipAmountPerPerson = 0;
     const {billAmount, numberOfPeople} = formData
-    setTotalAmountPerPerson(((billAmount/numberOfPeople) +tipAmountPerPerson).toFixed(2))
+    setTotalAmountPerPerson(((billAmount/numberOfPeople) + tipAmountPerPerson).toFixed(2))
    },[formData])
   
   
