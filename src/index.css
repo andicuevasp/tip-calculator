@@ -20,6 +20,12 @@ img {
 
 }
 
+@media (min-width: 1024px) { 
+  img {
+    width: 15%;
+  }
+}
+
 
 .container {
   display: flex;
@@ -30,11 +36,22 @@ img {
   background-color: white;
 }
 
+@media (min-width: 1024px) { 
+  .container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 20px;
+    flex-direction: row;
+  }
+}
+
 .initial-values, .results {
   display: flex;
   margin: 1rem;
   flex-direction: column;
 }
+
 
 
 h2 {
@@ -47,11 +64,21 @@ h3 {
   text-align: left;
 }
 
+@media (min-width: 1024px) {
+  h2 {
+    font-size: 1.2rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+}
+
 /* Bill Component */
 
 .bill {
   display: flex;
   flex-direction: column;
+  margin-bottom: 1rem;
 }
 
 .bill-input, .custom-tip, .number-people-input{
@@ -70,6 +97,13 @@ h3 {
   font-weight: 700;
   font-size: 2rem;
   text-align: right;
+} 
+
+@media (min-width: 1024px) {
+  .bill-input, .number-people-input {
+  padding: 5px;
+  font-size: 1.2rem;
+  }
 }
 
 .bill-input {
@@ -77,6 +111,10 @@ h3 {
 }
 
 /* Select Tip Component  */
+
+.select-tip {
+  margin-bottom: 1rem;
+}
 
 .select-tip-form {
   display: flex;
@@ -128,7 +166,20 @@ div.select-tip > form > label {
     width: 90%;
     border-radius: 20px;
     padding: 10px;
+} 
+
+@media (min-width: 1024px) {
+  .results {
+  padding: 30px;
+  }
 }
+
+.totals {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 
 button {
   background-color: #27c1ab;
@@ -145,11 +196,18 @@ button {
   text-transform: uppercase;
 }
 
+@media (min-width: 1024px) {
+  button {
+    margin-top: 150px;
+  }
+}
+
 .person {
 color: #759091;
 }
 
 .amount {
+  width: 50%;
   text-align: right;
   color: #27c1ab;
   font-size: 3rem;
