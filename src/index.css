@@ -142,7 +142,18 @@ div.select-tip > form > .select-tip-div > label {
   border-radius: 3px;
   font-size: 1.5rem;
   margin: 1rem;
+} 
+
+div.select-tip > form > .select-tip-div > label:hover{
+  background-color:#27c1ab;
+  color: #05454c;
 }
+
+.select-tip-radio:checked~div.select-tip > form > .select-tip-div > label {
+  background-color:#27c1ab;
+  color: #05454c;
+}
+
 
 .custom-tip {
   height: 40px;
