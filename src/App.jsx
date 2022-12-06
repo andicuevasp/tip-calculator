@@ -8,15 +8,23 @@ import logo from "../src/assets/logo.svg"
 function App() {
   const [formData, setFormData] = useState(
     {
-      billAmount: 0,
-      tip: "Custom",
-      numberOfPeople: 0
+      billAmount: "",
+      tip: "",
+      numberOfPeople: ""
     }
   )
- 
-  const tipAmountPerPerson = parseFloat((((formData.tip * formData.billAmount)/100)/formData.numberOfPeople).toFixed(2))
-  const totalAmountPerPerson = parseFloat(((formData.billAmount/formData.numberOfPeople) + tipAmountPerPerson).toFixed(2)) 
- 
+
+  let tipAmountPerPerson
+  let totalAmountPerPerson
+
+ if(formData.billAmount > 0 && formData.tip > 0 && formData.numberOfPeople > 0){
+    tipAmountPerPerson = parseFloat((((formData.tip * formData.billAmount)/100)/formData.numberOfPeople).toFixed(2))
+    totalAmountPerPerson = parseFloat(((formData.billAmount/formData.numberOfPeople) + tipAmountPerPerson).toFixed(2)) 
+ } else {
+    tipAmountPerPerson = (0.00).toFixed(2);
+    totalAmountPerPerson = (0.00).toFixed(2);
+ }
+
   
   console.log(formData)
   function handleChange(e) {
@@ -31,9 +39,9 @@ function App() {
 
   function reset() {
     setFormData({
-      billAmount: 0,
-      tip: "Custom",
-      numberOfPeople: 0
+      billAmount: "",
+      tip: "",
+      numberOfPeople: ""
     })
 
   }
