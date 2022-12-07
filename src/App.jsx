@@ -10,7 +10,9 @@ function App() {
     {
       billAmount: "",
       tip: "",
-      numberOfPeople: ""
+      numberOfPeople: "",
+      customTip: "",
+      tipSelector: ""
     }
   )
 
@@ -24,16 +26,24 @@ function App() {
     tipAmountPerPerson = (0.00).toFixed(2);
     totalAmountPerPerson = (0.00).toFixed(2);
  }
-
-  
-  console.log(formData)
+ 
   function handleChange(e) {
-    const {name, value, type, checked} = e.target;
+    const {name, value} = e.target;
     setFormData(prevFormData => {
-      return {
+      const newData = {
         ...prevFormData,
-        [name]: type === "checkbox" ? checked : value
+        [name]: value
       }
+        
+      if ( name === 'customTip' ) {
+        newData.tip = value
+        newData.tipSelector = ''
+      } else if( name === 'tipSelector' ) {
+        newData.tip = value
+        newData.customTip = ''
+      }
+      
+    return newData
     })
   }
 
@@ -41,7 +51,10 @@ function App() {
     setFormData({
       billAmount: "",
       tip: "",
-      numberOfPeople: ""
+      numberOfPeople: "",
+      customTip: "",
+      tipSelector: "",
+      isSelected: false
     })
 
   }
@@ -64,7 +77,7 @@ function App() {
           handleChange={handleChange} 
           />
         </div>
-        <Results 
+        <Results
         tipAmountPerPerson={tipAmountPerPerson}
         totalAmountPerPerson={totalAmountPerPerson}
         reset={reset}

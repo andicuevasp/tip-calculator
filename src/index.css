@@ -124,10 +124,10 @@ h3 {
   justify-content: center;
 }
 
-.select-tip-radio {
-  visibility: hidden;
-  position: absolute;
+.select-tip-radio{
+  display: none;
 }
+
 .select-tip-div {
   display: flex;
 }
@@ -149,7 +149,7 @@ div.select-tip > form > .select-tip-div > label:hover{
   color: #05454c;
 }
 
-.select-tip-radio:checked~div.select-tip > form > .select-tip-div > label {
+.select-tip-radio:checked+label{
   background-color:#27c1ab;
   color: #05454c;
 }
