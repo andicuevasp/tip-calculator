@@ -3,7 +3,10 @@ import { percentages } from "../data";
 export default function SelectTip(props) {
 
 
+  
+
   const radioFormElement = percentages.map((percent) => {
+    // const className = props.formData.currentlySelected === percent ? "tip-radio selected": "tip-radio";
     return (
       <div key={percent} className="select-tip-div">
         <input
@@ -15,7 +18,7 @@ export default function SelectTip(props) {
           checked={props.formData.tipSelector == {percent}}
           onChange={props.handleChange}
         />
-        <label htmlFor={percent} className="tip-ratio">{percent}%</label>
+        <label htmlFor={percent} className={props.formData.currentlySelected == percent ? "tip-radio selected": "tip-radio"}>{percent}%</label>
       </div>
     );
   });

@@ -32,7 +32,8 @@ function App() {
     setFormData(prevFormData => {
       const newData = {
         ...prevFormData,
-        [name]: value
+        [name]: value,
+        currentlySelected: e.target.id
       }
         
       if ( name === 'customTip' ) {
@@ -54,7 +55,7 @@ function App() {
       numberOfPeople: "",
       customTip: "",
       tipSelector: "",
-      isSelected: false
+      currentlySelected:""
     })
 
   }
