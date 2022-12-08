@@ -2,11 +2,8 @@ import { percentages } from "../data";
 
 export default function SelectTip(props) {
 
-
-  
-
+// tip percentages radio inputs that are created by mapping over an array of numbers that represent the tip percentages.
   const radioFormElement = percentages.map((percent) => {
-    // const className = props.formData.currentlySelected === percent ? "tip-radio selected": "tip-radio";
     return (
       <div key={percent} className="select-tip-div">
         <input
@@ -23,6 +20,7 @@ export default function SelectTip(props) {
     );
   });
 
+  //custom tip element which has a hidden input field so that the input field can remain empty if the user chooses the tipSelector
   const customTipElement =
         <div>
           <input
