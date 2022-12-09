@@ -1,4 +1,4 @@
-import { useState , useEffect} from 'react'
+import { useState } from 'react'
 import Bill from "../src/components/Bill"
 import SelectTip from "../src/components/SelectTip"
 import NumberOfPeople from "../src/components/NumberOfPeople"
