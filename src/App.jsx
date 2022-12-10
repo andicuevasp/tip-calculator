@@ -55,7 +55,7 @@ function App() {
   let totalAmountPerPerson
 
 // conditional statement to make sure calculations are done once all of the inputs have been chosen 
- if(formData.billAmount > 0 && formData.tip > 0 && formData.numberOfPeople > 0){
+ if(formData.billAmount.length > 0 && formData.tip.length > 0 && formData.numberOfPeople.length > 0){
     tipAmountPerPerson = parseFloat((((formData.tip * formData.billAmount)/100)/formData.numberOfPeople).toFixed(2))
     totalAmountPerPerson = parseFloat(((formData.billAmount/formData.numberOfPeople) + tipAmountPerPerson).toFixed(2)) 
  } else {
